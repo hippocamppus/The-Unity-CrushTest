@@ -15,7 +15,7 @@ jobs:
       matrix:
         # name of project folder or ./
         projectPath:
-          - ./
+          - Lab3/
         testMode:
           - playmode
           - editmode
