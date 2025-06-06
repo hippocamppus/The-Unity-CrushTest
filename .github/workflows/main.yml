@@ -83,7 +83,7 @@ jobs:
           unityVersion: 6000.1.4f1
           allow-prerelease: true
           targetPlatform: ${{ matrix.targetPlatform }}
-          buildScenes: ./PlatformerDemo.unity
+          buildScenes: IndieMarc/PlatformerDemo/PlatformerDemo.unity
       - uses: actions/upload-artifact@v4
         with:
           name: Build-${{ matrix.targetPlatform }}
