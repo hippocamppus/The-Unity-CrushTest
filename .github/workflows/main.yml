@@ -84,7 +84,7 @@ jobs:
           allow-prerelease: true
           targetPlatform: ${{ matrix.targetPlatform }}
           buildScenes: |
-            Lab3/Assets/IndieMarc/PlatformerDemo/PlatformerDemo.unity
+            Assets/IndieMarc/PlatformerDemo/PlatformerDemo.unity
       - uses: actions/upload-artifact@v4
         with:
           name: Build-${{ matrix.targetPlatform }}
