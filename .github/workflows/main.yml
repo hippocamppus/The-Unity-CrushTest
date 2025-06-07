@@ -74,12 +74,15 @@ jobs:
           path: Library
           key: Library-${{ matrix.targetPlatform }}
           restore-keys: Library-
+      - name: Clean Library cache
+        run: rm -rf Lab3/Library/
       - uses: game-ci/unity-builder@v4
         env:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
           UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
+          projectPath: Lab3/
           unityVersion: 6000.1.4f1
           allow-prerelease: true
           targetPlatform: ${{ matrix.targetPlatform }}
@@ -88,3 +91,7 @@ jobs:
         with:
           name: Build-${{ matrix.targetPlatform }}
           path: build/${{ matrix.targetPlatform }}
+      - name: Debug folder structure
+        run: |
+          ls -R Lab3/Assets/IndieMarc/
+          cat Lab3/ProjectSettings/EditorBuildSettings.asset
